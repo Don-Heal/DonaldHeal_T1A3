@@ -14,6 +14,37 @@ def gamemode
   prompt.select("which mode would you like to play?", choice)
 end
 
-def add_player
-    
+def players_turn
+  choice = { Checkboard: 1, Shoot: 2, Surrender: 3 }
+  prompt = TTY::Prompt.new
+  prompt.select("What would you like to do?", choice)
+end
+
+def grid
+  puts "---------------"
+
+  a = ["+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+"]
+  b = ["+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+"]
+  c = ["+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+"]
+  d = ["+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+"]
+  e = ["+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+"]
+  f = ["+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+"]
+  g = ["+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+"]
+  h = ["+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+" " " "+"]
+  puts a
+  puts b
+  puts c
+  puts d
+  puts e
+  puts f
+  puts g
+  puts h
+  puts "---------------"
+end
+
+def players_grid
+    puts grid
+end
+
+def enemy_grid
 end
