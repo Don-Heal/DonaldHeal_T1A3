@@ -14,4 +14,3 @@ gem "tty-prompt", "~> 0.23.1"
 
 gem "artii", "~> 2.1"
 
-gem "ascii_grid", "~> 0.1.2"
