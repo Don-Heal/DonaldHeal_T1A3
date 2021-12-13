@@ -54,7 +54,7 @@ def grid
   puts @board[56..63].join(" ").colorize(:color => :white, :background => :blue)
 end
 
-# givs the ships a random place to start
+# gives the ships a random grid reference
 def ships
   ships_array = []
 
@@ -75,20 +75,32 @@ def ships
   ship_2 = ships_array.sample(1)
   ship_3 = ships_array.sample(1)
 
-  while ship_1 == ship_2
+if (ship_1 && ship_2) == ship_3
     ship_1.replace(ships_array.sample(1))
-  end
-  while ship_2 == ship_3
     ship_2.replace(ships_array.sample(1))
   end
-  while ship_3 == ship_1
-    ship_3.replace(ships_array.sample(1))
-  end
+if ship_2 == ship_1
+    ship_2.replace(ships_array.sample(1))
+end
+
+
   return [ship_1, ship_2, ship_3]
 end
 
 def sunk
   a = Artii::Base.new
-  a.asciify("Battleships")
-  puts a.asciify("IT SUNK..").colorize(:green)
+  a.asciify("sunk")
+  puts a.asciify("YOU SUNK MY" "\n" "BATTLESHIP").colorize(:green)
+end
+
+def win
+  a = Artii::Base.new
+  a.asciify("win")
+  puts a.asciify("YOU WON" "\n" "THE GAME!!!!").colorize(:green)
+end
+
+def gameover
+  a = Artii::Base.new
+  a.asciify("Gameover")
+  puts a.asciify("Gameover").colorize(:red)
 end
