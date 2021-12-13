@@ -1,85 +1,57 @@
 require_relative "./methods.rb"
+require "colorize"
 
 puts title
-ship1 = ships[0]
-ship2 = ships[1]
-ship3 = ships[2]
 
-ship1_hits = []
-ship2_hits = []
-ship3_hits = []
+# Users name input
+puts "please enter name"
+name = gets.chomp
 
-# find out if they want to play againt the computer or another player
-
-if gamemode == 1
-  puts "Please enter Username".colorize(:blue)
-  input1 = gets.chomp.to_s
-  player1 = input1
-else # get both players name
-  puts "Please enter player 1's Username name".colorize(:blue)
-  input1 = gets.chomp.to_s
-  player1 = input1
-  puts "Please enter player 2's Username name".colorize(:red)
-  input2 = gets.chomp.to_s
-  player2 = input2
-end
-
-if player2 == nil
-  puts diffuculty
-end
 
 system "clear"
 
-# Start the game with player 1
-
 puts title
+puts "Welcome #{name}"
+# chose difficulty
+if difficulty == 1
+  system "clear"
+  counter = 50
+  ship1 = ships[0]
+  ship1_hit = []
+  tried = []
 
-# Players options for their turn
-# player 1's turn
-while true
-  while player2 = player2
-    puts "it's #{player1}'s turn".colorize(:blue)
-    case players_turn
-    when 1
-      puts "This is #{player1}'s side of the field".colorize(:blue)
-      puts board
-      puts "This is the enemy's side of the field".colorize(:red)
-      puts board
-    when 2
-      puts "Please enter where you would like to shoot A1 is top left and G1 is bottom left"
+loop do
+  grid
+  puts"Enter a grid location to fire!"
+ 
+  puts ship1
+  turn = gets.chomp.upcase
 
-      break
-    when 3
-      exit
-    end
+  if tried.include?(turn)
+  puts "Tried that space already try again"
   end
-  # player 2's turn
-  while player2 = player2
-    puts "it's #{player2}'s turn".colorize(:red)
-    case players_turn
-    when 1
-      puts "This is #{player2}'s side of the field".colorize(:red)
-      puts board
-      puts "This is the enemy's side of the field".colorize(:blue)
-      puts board
-    when 2
-      break
-    when 3
-      exit
+  if ship1.include?(turn)
+    puts"HIT"
+    ship1_hit<<turn
+    if ship_hit.count == ship1.count
+      puts sunk
     end
+  else 
+    puts"Nothing try again!"
   end
-  # single player option
-  while player2 == nil
-    puts "it's #{player1}'s turn".colorize(:blue)
-    case players_turn
-    when 1
-      puts "This is #{player1}'s side of the field".colorize(:blue)
-      puts board
-      puts "This is the enemy's side of the field".colorize(:red)
-      puts board
-    when 2
-    when 3
-      exit
-    end
-  end
+  tried<<turn
+  
+
+
+   
 end
+
+
+end
+
+#give players a grid
+
+# user goes first
+#computer goes first
+
+# first to sink ships wins
