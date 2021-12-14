@@ -2,11 +2,11 @@ require "tty-prompt"
 require "colorize"
 require "artii"
 
-# Displayes title screen
+# displayes title screen
 def title
   a = Artii::Base.new
   a.asciify("Battleships")
-  puts a.asciify("B A T T L E S H I P S")
+  puts a.asciify("B A T T L E S H I P S").colorize(:green)
 end
 
 # selects gamemode when prompted
@@ -54,53 +54,61 @@ def grid
   puts @board[56..63].join(" ").colorize(:color => :white, :background => :blue)
 end
 
-# gives the ships a random grid reference
-def ships
-  ships_array = []
+# gives the ship carriers a random grid reference
+def ship_carrier
+  ship_carrier = []
 
-  ships_array << ["A1", "B1", "C1", "D1"]
-  ships_array << ["H8", "G8", "F8", "E8"]
-  ships_array << ["C3", "C4", "C5", "C6"]
-  ships_array << ["A2", "A3", "A4"]
-  ships_array << ["B4", "B5", "B6"]
-  ships_array << ["H4", "H5", "H6"]
-  ships_array << ["G1", "G2", "G3"]
-  ships_array << ["A5", "A6", "A7"]
-  ships_array << ["G4", "G5"]
-  ships_array << ["B8", "C8"]
-  ships_array << ["C7", "D7"]
-  ships_array << ["F1", "F2"]
+  ship_carrier << ["A1", "B1", "C1", "D1"]
+  ship_carrier << ["H8", "G8", "F8", "E8"]
+  ship_carrier << ["C3", "C4", "C5", "C6"]
 
-  ship_1 = ships_array.sample(1)
-  ship_2 = ships_array.sample(1)
-  ship_3 = ships_array.sample(1)
+  ship_1 = ship_carrier.sample(1)
 
-if (ship_1 && ship_2) == ship_3
-    ship_1.replace(ships_array.sample(1))
-    ship_2.replace(ships_array.sample(1))
-  end
-if ship_2 == ship_1
-    ship_2.replace(ships_array.sample(1))
+  return [ship_1]
+end
+# gives the ship destroyer a random grid reference
+def ship_destroyer
+  ship_destroyer = []
+
+  ship_destroyer << ["A2", "A3", "A4"]
+  ship_destroyer << ["B4", "B5", "B6"]
+  ship_destroyer << ["H4", "H5", "H6"]
+  ship_destroyer << ["G1", "G2", "G3"]
+  ship_destroyer << ["A5", "A6", "A7"]
+
+  ship_2 = ship_destroyer.sample(1)
+
+  return [ship_2]
 end
 
+def ship_patrol
+  ship_patrol = []
 
-  return [ship_1, ship_2, ship_3]
+  ship_patrol << ["G4", "G5"]
+  ship_patrol << ["B8", "C8"]
+  ship_patrol << ["C7", "D7"]
+  ship_patrol << ["F1", "F2"]
+
+  ship_3 = ship_patrol.sample(1)
+
+  return [ship_3]
 end
-
+# method for sinking a ship
 def sunk
   a = Artii::Base.new
   a.asciify("sunk")
   puts a.asciify("YOU SUNK MY" "\n" "BATTLESHIP").colorize(:green)
 end
-
+# method for winning the game
 def win
   a = Artii::Base.new
   a.asciify("win")
   puts a.asciify("YOU WON" "\n" "THE GAME!!!!").colorize(:green)
 end
-
+# method for losing the game
 def gameover
   a = Artii::Base.new
   a.asciify("Gameover")
   puts a.asciify("Gameover").colorize(:red)
 end
+
