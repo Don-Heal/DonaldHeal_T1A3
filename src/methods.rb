@@ -23,18 +23,11 @@ def difficulty
   prompt.select("What skill level would you like to play?", choice)
 end
 
-# Shows game menu options
-def game_menu
-  choice = { Play: 1, Exit: 2 }
+# multiplayer menu
+def multi_menu
+  choice = { Play: 1, Surrender: 2 }
   prompt = TTY::Prompt.new
-  prompt.select("What would you like to do?", choice)
-end
-
-# player options
-def players_turn
-  choice = { Checkboard: 1, Attack: 2, Surrender: 3 }
-  prompt = TTY::Prompt.new
-  prompt.select("What would you like to do?", choice)
+  prompt.select("Would you like to continue?", choice)
 end
 
 # creats the grid for the game
@@ -80,7 +73,7 @@ def ship_destroyer
 
   return [ship_2]
 end
-
+# gives the ship patrol a random grid reference
 def ship_patrol
   ship_patrol = []
 
@@ -104,11 +97,13 @@ def win
   a = Artii::Base.new
   a.asciify("win")
   puts a.asciify("YOU WON" "\n" "THE GAME!!!!").colorize(:green)
+  exit
 end
 # method for losing the game
 def gameover
   a = Artii::Base.new
   a.asciify("Gameover")
   puts a.asciify("Gameover").colorize(:red)
+  puts a.asciify("Thanks for playing")
+  exit
 end
-
