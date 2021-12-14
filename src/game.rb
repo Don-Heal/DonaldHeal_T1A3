@@ -1,28 +1,30 @@
 require_relative "./methods.rb"
 require "colorize"
+
+
 def game
-system "clear"
-if difficulty == 1
+   tried = []
+   ship1 = ship_carrier[0]
+   ship2 = ship_destroyer[0]
+   ship3 = ship_patrol[0]
+   ship1_hit = []
+   ship2_hit = []
+   ship3_hit = []
+   if difficulty ==1
     counter = 51
-else
+   else
     counter = 21
-end
+   end
 system "clear"
-  tried = []
-  ship1 = ship_carrier[0]
-  ship2 = ship_destroyer[0]
-  ship3 = ship_patrol[0]
-  ship1_hit = []
-  ship2_hit = []
-  ship3_hit = []
 #Game loop begins
-loop do 
+loop do
     counter -=1
 # place grid for game
   puts grid
   if counter == 0
     puts gameover
     puts"Thanks for playing"
+    exit
   end
   puts "Time until Gameover #{counter}"
   puts "Hits on ship 1's location: #{ship1_hit.sort}".colorize(:color => :yellow, :background => :grey)

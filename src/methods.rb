@@ -25,7 +25,7 @@ end
 
 # multiplayer menu
 def multi_menu
-  choice = { Play: 1, Surrender: 2 }
+  choice = { Player1: 1, player: 2 }
   prompt = TTY::Prompt.new
   prompt.select("Would you like to continue?", choice)
 end
@@ -107,3 +107,4 @@ def gameover
   puts a.asciify("Thanks for playing")
   exit
 end
+
