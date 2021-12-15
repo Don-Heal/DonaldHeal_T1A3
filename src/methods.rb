@@ -52,6 +52,7 @@ def ship_carrier
 
   return [ship_1]
 end
+
 # gives the ship destroyer a random grid reference
 def ship_destroyer
   ship_destroyer = []
@@ -66,6 +67,7 @@ def ship_destroyer
 
   return [ship_2]
 end
+
 # gives the ship patrol a random grid reference
 def ship_patrol
   ship_patrol = []
@@ -79,12 +81,14 @@ def ship_patrol
 
   return [ship_3]
 end
+
 # method for sinking a ship
 def sunk
   a = Artii::Base.new
   a.asciify("sunk")
   puts a.asciify("YOU SUNK MY" "\n" "BATTLESHIP").colorize(:green)
 end
+
 # method for winning the game
 def win
   a = Artii::Base.new
@@ -94,6 +98,7 @@ def win
         f.puts("#{@name} won the match.")
       end 
 end
+
 # method for losing the game
 def gameover
   a = Artii::Base.new

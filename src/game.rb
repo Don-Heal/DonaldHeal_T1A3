@@ -101,7 +101,8 @@ loop do
         unless ship1.flatten && ship2.flatten && ship3.flatten.include?(turn)
           system "clear"
           tried<<turn
-          puts "You have missed try again careful not to fire blanks off the map"
+          puts "You have missed try again."
+          puts "Be carful not to waste shots outside of the grid"
         end
       end
   end
