@@ -11,7 +11,7 @@ end
 
 # selects gamemode when prompted
 def gamemode
-  choice = { Singleplayer: 1, Multiplayer: 2 }
+  choice = { Play: 1, History: 2, Exit: 3 }
   prompt = TTY::Prompt.new
   prompt.select("which mode would you like to play?", choice)
 end
@@ -25,9 +25,9 @@ end
 
 # multiplayer menu
 def multi_menu
-  choice = { Player1: 1, player: 2 }
+  choice = { Player1: 1, Player2: 2 }
   prompt = TTY::Prompt.new
-  prompt.select("Would you like to continue?", choice)
+  prompt.select("Whos turn is it?", choice)
 end
 
 # creats the grid for the game
@@ -96,7 +96,7 @@ end
 def win
   a = Artii::Base.new
   a.asciify("win")
-  puts a.asciify("YOU WON" "\n" "THE GAME!!!!").colorize(:green)
+  puts a.asciify("#{name} Won" "\n" "THE GAME!!!!").colorize(:green)
   exit
 end
 # method for losing the game
@@ -104,7 +104,6 @@ def gameover
   a = Artii::Base.new
   a.asciify("Gameover")
   puts a.asciify("Gameover").colorize(:red)
-  puts a.asciify("Thanks for playing")
+  puts a.asciify("Thanks for playing").colorize(:blue)
   exit
 end
-

@@ -1,5 +1,6 @@
 require_relative "./methods.rb"
 require "colorize"
+require "json"
 
 
 def game
@@ -21,6 +22,10 @@ loop do
     counter -=1
 # place grid for game
   puts grid
+if grid
+  puts"thats off the grid try again"
+end
+
   if counter == 0
     puts gameover
     puts"Thanks for playing"
