@@ -14,4 +14,4 @@ gem "tty-prompt", "~> 0.23.1"
 
 gem "artii", "~> 2.1"
 
-gem "json"
+gem 'json', '~> 2.6', '>= 2.6.1'

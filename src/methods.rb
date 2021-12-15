@@ -23,13 +23,6 @@ def difficulty
   prompt.select("What skill level would you like to play?", choice)
 end
 
-# multiplayer menu
-def multi_menu
-  choice = { Player1: 1, Player2: 2 }
-  prompt = TTY::Prompt.new
-  prompt.select("Whos turn is it?", choice)
-end
-
 # creats the grid for the game
 def grid
 
@@ -95,9 +88,11 @@ end
 # method for winning the game
 def win
   a = Artii::Base.new
-  a.asciify("win")
-  puts a.asciify("#{name} Won" "\n" "THE GAME!!!!").colorize(:green)
-  exit
+  a.asciify("Win")
+  puts a.asciify("#{@name} Won" "\n" "THE GAME!!!!").colorize(:green)
+        File.open("./data/user_list.txt", "a") do |f| 
+        f.puts("#{@name} won the match.")
+      end 
 end
 # method for losing the game
 def gameover
@@ -105,5 +100,7 @@ def gameover
   a.asciify("Gameover")
   puts a.asciify("Gameover").colorize(:red)
   puts a.asciify("Thanks for playing").colorize(:blue)
-  exit
+          File.open("./data/user_list.txt", "a") do |f| 
+        f.puts("#{@name} lost the match.")
+      end 
 end

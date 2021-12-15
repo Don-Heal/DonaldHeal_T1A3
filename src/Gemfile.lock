@@ -38,7 +38,7 @@ PLATFORMS
 DEPENDENCIES
   artii (~> 2.1)
   colorize (~> 0.8.1)
-  json
+  json (~> 2.6, >= 2.6.1)
   rspec (~> 3.10)
   tty-prompt (~> 0.23.1)
 

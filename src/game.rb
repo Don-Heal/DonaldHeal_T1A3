@@ -17,19 +17,23 @@ def game
     counter = 21
    end
 system "clear"
+# Users name input
+  puts "Please enter name".colorize(:color => :yellow, :background => :grey)
+  @name = gets.chomp
+system "clear"
+
+# Greeting
+  puts title
+  puts "Welcome #{@name}".colorize(:color => :yellow, :background => :grey)
+
 #Game loop begins
 loop do
     counter -=1
 # place grid for game
   puts grid
-if grid
-  puts"thats off the grid try again"
-end
-
   if counter == 0
     puts gameover
-    puts"Thanks for playing"
-    exit
+    break
   end
   puts "Time until Gameover #{counter}"
   puts "Hits on ship 1's location: #{ship1_hit.sort}".colorize(:color => :yellow, :background => :grey)

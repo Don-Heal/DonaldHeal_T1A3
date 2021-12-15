@@ -1,26 +1,18 @@
 require_relative "./methods.rb"
 require_relative "./game.rb"
 require "colorize"
-require "json"
-
-puts title
-
-if gamemode == 1
-# Users name input
-  puts "Please enter name".colorize(:color => :yellow, :background => :grey)
-  name = gets.chomp
 system "clear"
-
-# Greeting
-  puts title
-  puts "Welcome #{name}".colorize(:color => :yellow, :background => :grey)
-
+puts title
+loop do
+case gamemode
+when gamemode = 1
 # Starts the game
 puts game
 
-elsif gamemode ==2
+when gamemode =2
   # goes to history file
-  file = File.read('./data/user_list.json')
+ puts file_data = File.read("./data/user_list.txt").chomp
 else
   exit
+end
 end
