@@ -1,6 +1,7 @@
 require "tty-prompt"
 require "colorize"
 require "artii"
+@time = Time.now
 
 # displayes title screen
 def title
@@ -26,18 +27,18 @@ end
 # creats the grid for the game
 def grid
 
-  @x = ["A", "B", "C", "D", "E", "F", "G", "H"]
-  @y = [1, 2, 3, 4, 5, 6, 7, 8]
-  @xy = @x.product(@y)
-  @board = @xy.map! { |xy| xy.join("") }
-  puts @board[0..7].join(" ").colorize(:color => :white, :background => :blue)
-  puts @board[8..15].join(" ").colorize(:color => :white, :background => :blue)
-  puts @board[16..23].join(" ").colorize(:color => :white, :background => :blue)
-  puts @board[24..31].join(" ").colorize(:color => :white, :background => :blue)
-  puts @board[32..39].join(" ").colorize(:color => :white, :background => :blue)
-  puts @board[40..47].join(" ").colorize(:color => :white, :background => :blue)
-  puts @board[48..55].join(" ").colorize(:color => :white, :background => :blue)
-  puts @board[56..63].join(" ").colorize(:color => :white, :background => :blue)
+  x = ["A", "B", "C", "D", "E", "F", "G", "H"]
+  y = [1, 2, 3, 4, 5, 6, 7, 8]
+  xy = x.product(y)
+  board = xy.map! { |xy| xy.join("") }
+  puts board[0..7].join(" ").colorize(:color => :white, :background => :blue)
+  puts board[8..15].join(" ").colorize(:color => :white, :background => :blue)
+  puts board[16..23].join(" ").colorize(:color => :white, :background => :blue)
+  puts board[24..31].join(" ").colorize(:color => :white, :background => :blue)
+  puts board[32..39].join(" ").colorize(:color => :white, :background => :blue)
+  puts board[40..47].join(" ").colorize(:color => :white, :background => :blue)
+  puts board[48..55].join(" ").colorize(:color => :white, :background => :blue)
+  puts board[56..63].join(" ").colorize(:color => :white, :background => :blue)
 end
 
 # gives the ship carriers a random grid reference
@@ -95,7 +96,7 @@ def win
   a.asciify("Win")
   puts a.asciify("#{@name} Won" "\n" "THE GAME!!!!").colorize(:green)
         File.open("./data/user_list.txt", "a") do |f| 
-        f.puts("#{@name} won the match.")
+        f.puts("#{@name} won the match on #{@time}")
       end 
 end
 
@@ -106,6 +107,12 @@ def gameover
   puts a.asciify("Gameover").colorize(:red)
   puts a.asciify("Thanks for playing").colorize(:blue)
           File.open("./data/user_list.txt", "a") do |f| 
-        f.puts("#{@name} lost the match.")
+        f.puts("#{@name} lost the match on #{@time}")
       end 
 end
+
+def all_sunk
+  ship1_hit.count == ship1.flatten.count && ship2_hit.count == ship2.flatten.count && ship3_hit.count == ship3.flatten.count
+end
+
+

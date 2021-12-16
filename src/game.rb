@@ -12,9 +12,9 @@ def game
    ship2_hit = []
    ship3_hit = []
    if difficulty ==1
-    counter = 51
+    counter = 50
    else
-    counter = 21
+    counter = 20
    end
 system "clear"
 # Users name input
@@ -28,7 +28,6 @@ system "clear"
 
 #Game loop begins
 loop do
-    counter -=1
 # place grid for game
   puts grid
   if counter == 0
@@ -42,11 +41,11 @@ loop do
   puts"Enter a grid location to fire!".colorize(:color => :yellow, :background => :grey)
 # puts "Turn's until enemys escape #{counter}"
   turn = gets.chomp.upcase
-
 # type in location to fire at
   if tried.include?(turn)
     system "clear"
     puts "Tried that space already try again".colorize(:color => :black, :background => :red)
+
 
 # first ship on the board if hit loop to top or keep going
   elsif ship1.any? { |a| a.include?(turn) }
@@ -54,9 +53,10 @@ loop do
     puts"HIT".colorize(:green)
     ship1_hit<<turn
     tried<<turn
+        counter -=1
       if ship1_hit.count == ship1.flatten.count
         puts sunk
-          if ship1_hit.count == ship1.flatten.count && ship2_hit.count == ship2.flatten.count && ship3_hit.count == ship3.flatten.count
+          if all_sunk
             puts win
             break
           else
@@ -70,9 +70,10 @@ loop do
     puts"HIT".colorize(:green)
     ship2_hit<<turn
     tried<<turn
+        counter -=1
       if ship2_hit.count == ship2.flatten.count
         puts sunk
-          if ship1_hit.count == ship1.flatten.count && ship2_hit.count == ship2.flatten.count && ship3_hit.count == ship3.flatten.count
+          if all_sunk
             puts win
             break
           else
@@ -86,9 +87,10 @@ loop do
     puts"HIT".colorize(:green)
     ship3_hit<<turn
     tried<<turn
+        counter -=1
       if ship3_hit.count == ship3.flatten.count
         puts sunk
-          if ship1_hit.count == ship1.flatten.count && ship2_hit.count == ship2.flatten.count && ship3_hit.count == ship3.flatten.count
+          if all_sunk
             puts win
             break
           else
@@ -101,9 +103,11 @@ loop do
         unless ship1.flatten && ship2.flatten && ship3.flatten.include?(turn)
           system "clear"
           tried<<turn
+              counter -=1
           puts "You have missed try again."
           puts "Be carful not to waste shots outside of the grid"
         end
       end
   end
+    counter -=1
 end
