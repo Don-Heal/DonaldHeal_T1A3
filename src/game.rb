@@ -16,11 +16,11 @@ def game
    else
     counter = 20
    end
-system "clear"
+system("cls") || system("clear")
 # Users name input
   puts "Please enter name".colorize(:color => :yellow, :background => :grey)
   @name = gets.chomp
-system "clear"
+system("cls") || system("clear")
 
 # Greeting
   puts title
@@ -40,17 +40,16 @@ loop do
   puts "Hits on ship 3's location: #{ship3_hit.sort}".colorize(:color => :yellow, :background => :grey)
   puts"Enter a grid location to fire!".colorize(:color => :yellow, :background => :grey)
 # puts "Turn's until enemys escape #{counter}"
-begin
   turn = gets.chomp.upcase
 # type in location to fire at
   if tried.include?(turn)
-    system "clear"
+    system("cls") || system("clear")
     puts "Tried that space already try again".colorize(:color => :black, :background => :red)
 
 
 # first ship on the board if hit loop to top or keep going
   elsif ship1.any? { |a| a.include?(turn) }
-    system "clear"
+    system("cls") || system("clear")
     puts"HIT".colorize(:green)
     ship1_hit<<turn
     tried<<turn
@@ -67,7 +66,7 @@ begin
 
 # Second ship on the board if hit loop to top or keep going
   elsif ship2.any? { |a| a.include?(turn) }
-    system "clear"
+    system("cls") || system("clear")
     puts"HIT".colorize(:green)
     ship2_hit<<turn
     tried<<turn
@@ -84,7 +83,7 @@ begin
 
 # third ship on the board if hit loop to top or keep going
   elsif ship3.any? { |a| a.include?(turn) }
-    system "clear"
+    system("cls") || system("clear")
     puts"HIT".colorize(:green)
     ship3_hit<<turn
     tried<<turn
@@ -102,7 +101,7 @@ begin
       # missed all ships option
       elsif
         unless ship1.flatten && ship2.flatten && ship3.flatten.include?(turn)
-          system "clear"
+          system("cls") || system("clear")
           tried<<turn
               counter -=1
           puts "You have missed try again."
@@ -110,8 +109,5 @@ begin
         end
       end
   end
-  rescue
-    puts "Something isn't quite right lets try again."
-end
-counter -=1
-end
+  counter -=1
+end 

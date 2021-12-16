@@ -87,7 +87,8 @@ end
 def sunk
   a = Artii::Base.new
   a.asciify("sunk")
-  puts a.asciify("YOU SUNK MY" "\n" "BATTLESHIP").colorize(:green)
+  puts a.asciify("YOU SUNK MY").colorize(:green)
+  puts a.asciify("BATTLESHIP").colorize(:green)
 end
 
 # method for winning the game

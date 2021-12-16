@@ -13,7 +13,7 @@ loop do
     
     when gamemode =2
       # goes to history file
-      system "clear"
+      system("cls") || system("clear")
       puts title
       puts file_data = File.read("./data/user_list.txt").chomp
     else

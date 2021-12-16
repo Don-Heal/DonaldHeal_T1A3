@@ -42,7 +42,8 @@ The user plays against a countdown, this countdown can be set when choosing how 
 Run the script from the src file to install relevent gems and run application.
 ## Dependencies
 
-This application requires the use of ruby and gems gems
+This application requires the use of ruby and gems
+you can find a script in the src file that will insall them for you.
 
 - gem colorize 0.8.1
 
