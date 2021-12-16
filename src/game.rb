@@ -40,6 +40,7 @@ loop do
   puts "Hits on ship 3's location: #{ship3_hit.sort}".colorize(:color => :yellow, :background => :grey)
   puts"Enter a grid location to fire!".colorize(:color => :yellow, :background => :grey)
 # puts "Turn's until enemys escape #{counter}"
+begin
   turn = gets.chomp.upcase
 # type in location to fire at
   if tried.include?(turn)
@@ -109,5 +110,8 @@ loop do
         end
       end
   end
-    counter -=1
+  rescue
+    puts "Something isn't quite right lets try again."
+end
+counter -=1
 end

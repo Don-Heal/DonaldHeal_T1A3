@@ -35,13 +35,14 @@ The user plays against a countdown, this countdown can be set when choosing how 
 
 ![Diagram](docs/Flowchart.png)
 
+# Implementation plan
+![Diagram](docs/Implementation.png)
 # Install
 
 Run the script from the src file to install relevent gems and run application.
-
 ## Dependencies
 
-This application requires the use of ruby gems
+This application requires the use of ruby and gems gems
 
 - gem colorize 0.8.1
 
