@@ -1,4 +1,7 @@
 #!/bin/bash
+cd src
 gem install bundler 
 bundle install
-ruby main.rb
+chmod +x main.rb
+main.rb
+

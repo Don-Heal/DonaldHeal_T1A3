@@ -1,6 +1,26 @@
 require_relative "./methods.rb"
+require_relative "./menu_methods.rb"
 require_relative "./game.rb"
-require "colorize"
+
+
+if ARGV.length > 0 
+    flag, *rest = ARGV 
+    ARGV.clear
+    case flag
+    when '-help'
+        puts "Please look at readme document for help"
+        exit
+    when '-info'
+        puts "Game: Battleships, Players: Singleplayer, Author: Don Heal"
+        exit
+    when '-install'
+        puts "Run the 'install and run' script to install and run the application. "
+        exit
+    else 
+     puts "Please enter -help, -info, -install"
+     exit 
+    end
+end  
 
 puts title
 

@@ -1,6 +1,8 @@
 require_relative "./methods.rb"
+require_relative "./menu_methods.rb"
+require_relative "./grid_methods.rb"
+require_relative "./ships_methods.rb"
 require "colorize"
-require "json"
 
 
 def game
