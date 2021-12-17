@@ -18,6 +18,7 @@ def game
    else
     counter = 20
    end
+   begin
 system("cls") || system("clear")
 # Users name input
   puts "Please enter name".colorize(:color => :yellow, :background => :grey)
@@ -27,7 +28,9 @@ system("cls") || system("clear")
 # Greeting
   puts title
   puts "Welcome #{@name}".colorize(:color => :yellow, :background => :grey)
-
+rescue
+puts"Lets try again"
+  end
 #Game loop begins
 loop do
 # place grid for game

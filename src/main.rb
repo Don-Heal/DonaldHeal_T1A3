@@ -14,7 +14,7 @@ if ARGV.length > 0
         puts "Game: Battleships, Players: Singleplayer, Author: Don Heal"
         exit
     when '-install'
-        puts "Run the 'install and run' script to install and run the application. "
+        puts "Run the 'install' script to install and run the application. "
         exit
     else 
      puts "Please enter -help, -info, -install"

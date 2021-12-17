@@ -7,7 +7,7 @@ By Donald Heal
 The application will run inside a terminal and keep track of the users ability to beat the game.
 It's to be used as a quick and easy way to take a little break from whatever work the user is doing at the time, allowing for a little respite from their main task that they are focusing on while also potentionally supplying a little challange to the user giving them something else to focus or problem solve on for a short while.
 This application is targeted at people who spend time working at a computer and need just a quick break inbetween while moving from one task to another or potentialy need a quick destraction while stuck on a problem.
-A user can use this application on their computer using their keyboard to navigate around the application. This
+A user can use this application on their computer using their keyboard to navigate around the application.
 
 # Features
 
@@ -37,13 +37,13 @@ The user plays against a countdown, this countdown can be set when choosing how 
 
 # Implementation plan
 ![Diagram](docs/Implementation.png)
-# Install
+# Installation and Running
 
-Run the script from the src file to install relevent gems and run application.
+The application is designed to be run from the "main.rb" file from within a terminal. The main.rd file has the flags -help, -info, -install within the file.
+To allow the application to run correctly you should run the "install" script from within the terminal this will a use bundeler to install the correct dependencies that are required for the application. It will also start the game for the first time.
 ## Dependencies
 
-This application requires the use of ruby and gems
-you can find a script in the src file that will insall them for you.
+This application requires the use of these ruby and gems
 
 - gem colorize 0.8.1
 
@@ -52,6 +52,12 @@ you can find a script in the src file that will insall them for you.
 - gem tty-prompt 0.23.1
 
 - gem artii  2.1
+
+This application is a ruby terminal application and will require.
+- Bash
+- Ruby
+- Screen
+- Keyboard
 
 # Links
 
