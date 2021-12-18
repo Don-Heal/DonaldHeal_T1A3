@@ -1,4 +1,5 @@
 require_relative "./methods.rb"
+require_relative "./multi_play.rb"
 require_relative "./menu_methods.rb"
 require_relative "./game.rb"
 
@@ -30,12 +31,17 @@ loop do
     when gamemode = 1
       # Starts the game
       puts game
-    
-    when gamemode =2
+
+    when gamemode = 2
+      # start multiplayergame
+      puts multi_game
+
+    when gamemode =3
       # goes to history file
       system("cls") || system("clear")
       puts title
       puts file_data = File.read("./data/user_list.txt").chomp
+      
     else
       exit
   end

@@ -61,7 +61,8 @@ loop do
         counter -=1
       if ship1_hit.count == ship1.flatten.count
         puts sunk
-          if all_sunk
+          if
+            ship1_hit.count == ship1.flatten.count && ship2_hit.count == ship2.flatten.count && ship3_hit.count == ship3.flatten.count
             puts win
             break
           else
@@ -78,7 +79,8 @@ loop do
         counter -=1
       if ship2_hit.count == ship2.flatten.count
         puts sunk
-          if all_sunk
+          if
+            ship1_hit.count == ship1.flatten.count && ship2_hit.count == ship2.flatten.count && ship3_hit.count == ship3.flatten.count
             puts win
             break
           else
@@ -95,7 +97,8 @@ loop do
         counter -=1
       if ship3_hit.count == ship3.flatten.count
         puts sunk
-          if all_sunk
+          if
+            ship1_hit.count == ship1.flatten.count && ship2_hit.count == ship2.flatten.count && ship3_hit.count == ship3.flatten.count
             puts win
             break
           else

@@ -15,6 +15,9 @@ A user can use this application on their computer using their keyboard to naviga
 
 This application has an easy to use menu system which allows the user to either play the game, view the match history of completed games and a simple exit function that closes the application.
 
+## Multiplayer
+you can chose to play against a friend and see who can find the ships the fastest as you race against the timer to try sink all of your ships first.
+
 ## History log
 
 The history log allows the user from the menu to view all the entered names from previously completed games and see if they had won or lost trying to sink all the ships. it will also provide the user with the time and date that the game was completed allowing them to keep track of their wins and losses.
@@ -36,6 +39,7 @@ The user plays against a countdown, this countdown can be set when choosing how 
 ![Diagram](docs/Flowchart.png)
 
 # Implementation plan
+Started by listing the things the game would need to function and divided them up into the steps and order that having them completed would allow to move to the next step. Most of the targets were achived on time with the exeption of a couple which were a bigger problem than expected.
 ![Diagram](docs/Implementation.png)
 # Installation and Running
 
@@ -58,6 +62,9 @@ This application is a ruby terminal application and will require.
 - Ruby
 - Screen
 - Keyboard
+
+# Gameplay
+First the user will need to choose if it's a singleplayer or multiplayer game. Once this decision has been made they will need to enter a name for themselves with no limit on characters numbers or symbols. If no name is entered their name will be recorded as nothing. Then you will need to choose a difficulty setting, this will change how many turns you have to find and sink all the ships on the board. If multiplayer was, you will be taken to a menu where you can select who's turn it is, as the turn counter is displayed on screen the other player will notice if you are taking more than 1 turn. There will be a valid grid location displayed on the screen to help you decide where to go. If you were to select something outside the grid it will use a turn counter so make sure you only enter valid grid locations. The input is not case sensitive so upper or lower case will work but you will need to make sure it's a letter then a number not the other way around. if you were to select a grid location that you have selected before you will not lose a turn counter towards this only a message advising that you have entered this before. If a player has found all the ships on the grid they will have the name they entered saved in a file with the time they won. In a multiplayer game it will save the names of who beat who in the match. If the counter reaches 0 the player or players will lose and will be given a game over which will also be recorded. Once the game is complete it will return you to the main menu where you started to either view the history log or choose another game type. Thanks for playing.
 
 # Links
 

@@ -9,8 +9,9 @@ def ship_carrier
   ship_carrier << ["C3", "C4", "C5", "C6"]
 
   ship_1 = ship_carrier.sample(1)
+  ship_4 = ship_carrier.sample(1)
 
-  return [ship_1]
+  return [ship_1, ship_4]
 end
 
 # gives the ship destroyer a random grid reference
@@ -24,8 +25,9 @@ def ship_destroyer
   ship_destroyer << ["A5", "A6", "A7"]
 
   ship_2 = ship_destroyer.sample(1)
+  ship_5 = ship_destroyer.sample(1)
 
-  return [ship_2]
+  return [ship_2, ship_5]
 end
 
 # gives the ship patrol a random grid reference
@@ -38,8 +40,9 @@ def ship_patrol
   ship_patrol << ["F1", "F2"]
 
   ship_3 = ship_patrol.sample(1)
+  ship_6 = ship_patrol.sample(1)
 
-  return [ship_3]
+  return [ship_3, ship_6]
 end
 
 # method for sinking a ship
@@ -48,9 +51,4 @@ def sunk
   a.asciify("sunk")
   puts a.asciify("YOU SUNK MY").colorize(:green)
   puts a.asciify("BATTLESHIP").colorize(:green)
-end
-
-
-def all_sunk
-  ship1_hit.count == ship1.flatten.count && ship2_hit.count == ship2.flatten.count && ship3_hit.count == ship3.flatten.count
 end
