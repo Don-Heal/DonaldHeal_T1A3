@@ -42,9 +42,9 @@ The user plays against a countdown, this countdown can be set when choosing how 
 Started by listing the things the game would need to function and divided them up into the steps and order that having them completed would allow to move to the next step. Most of the targets were achived on time with the exeption of a couple which were a bigger problem than expected.
 ![Diagram](docs/Implementation.png)
 # Installation and Running
+To allow the application to run correctly you should run the "install" script from within the terminal and the src folder then use the ./install.sh command this will a use bundeler to install the correct dependencies that are required for the application. It will also start the game for the first time. 
+The application is designed to be run from the "main.rb" file from within a terminal and the src folder using the ./Run_game.sh command. The main.rb file has the flags if you wanted to run it manually not using a script they are -help, -info and -install.
 
-The application is designed to be run from the "main.rb" file from within a terminal. The main.rd file has the flags -help, -info, -install within the file.
-To allow the application to run correctly you should run the "install" script from within the terminal this will a use bundeler to install the correct dependencies that are required for the application. It will also start the game for the first time.
 ## Dependencies
 
 This application requires the use of these ruby and gems
