@@ -11,12 +11,12 @@ end
 
 describe "joins x y for grid" do
     it "should connect x and y to make 1 string" do
-    @x = ["A", "B"]
-    @y = [1, 2]
-    @xy = @x.product(@y)
-    @board = @xy.map! { |xy| xy.join("") }
-    puts @board[0..1].join(" ")
-    expect(@xy).to eq(["A1", "A2", "B1", "B2"])
+    x = ["A", "B"]
+    y = [1, 2]
+    xy = x.product(y)
+    board = xy.map! { |xy| xy.join("") }
+    puts board[0..1].join(" ")
+    expect(xy).to eq(["A1", "A2", "B1", "B2"])
     end
 
 end

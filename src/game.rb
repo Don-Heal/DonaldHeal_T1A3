@@ -112,8 +112,8 @@ loop do
           system("cls") || system("clear")
           tried<<turn
               counter -=1
-          puts "You have missed try again."
-          puts "Be carful not to waste shots outside of the grid"
+          puts "You have missed try again.".colorize(:color => :yellow, :background => :black)
+          puts "Be carful not to waste shots outside of the grid".colorize(:color => :yellow, :background => :black)
         end
       end
   end

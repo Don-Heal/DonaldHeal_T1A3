@@ -20,7 +20,7 @@ def multi_game
    ship5_hit = []
    ship6_hit = []
    if difficulty ==1
-    counter = 100
+    counter = 80
    else
     counter = 40
    end
@@ -129,8 +129,8 @@ loop do
           system("cls") || system("clear")
           tried<<turn1
               counter -=1
-          puts "You have missed try again."
-          puts "Be carful not to waste shots outside of the grid"
+          puts "You have missed try again.".colorize(:color => :yellow, :background => :black)
+          puts "Be carful not to waste shots outside of the grid it will cost you a turn.".colorize(:color => :yellow, :background => :black)
         end
       end
 
@@ -213,8 +213,8 @@ loop do
           system("cls") || system("clear")
           tried<<turn2
               counter -=1
-          puts "You have missed try again."
-          puts "Be carful not to waste shots outside of the grid"
+          puts "You have missed try again.".colorize(:color => :yellow, :background => :black
+          puts "Be carful not to waste shots outside of the grid it will cost you a turn".colorize(:color => :yellow, :background => :black)
         end
       end
   end
